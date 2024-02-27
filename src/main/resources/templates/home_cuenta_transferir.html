@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Home de la Cuenta</title>
+</head>
+<body>
+    <h2>Cajero</h2>
+    Cuenta de id <span th:text="${cuenta.idCuenta}"></span> de saldo <span th:text="${cuenta.saldo}"></span> €.
+	<p>Transferir dinero a otra cuenta:</p>
+    <form th:action="@{/cuenta/transferir}" method="post">
+        <table>
+            <tr>
+                <!-- any se pone para que admite números decimales -->
+                <td><label for="inputid1">Cantidad (€):</label></td><td><input type="number" id="inputid1" name="cantidad" required step="any" min="0.01"></td>
+            </tr>
+            <tr>
+                <td><label for="inputid2">Id cuenta destino:</label></td><td><input type="number" id="inputid2" name="idCuentaDestino" required min="0"></td>
+            </tr>
+        </table>
+        <br>
+        <input type="submit" value="Transferir">
+    </form>
+    <br>
+</body>
+</body>
+</html>

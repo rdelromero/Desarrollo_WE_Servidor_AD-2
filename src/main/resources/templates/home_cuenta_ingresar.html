@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Home de la Cuenta</title>
+    <link rel="stylesheet" type="text/css" href="/css/estilos.css">
+</head>
+<body>
+    <h2>Cajero</h2>
+    <p>Información de la cuenta:</p>
+    <table>
+		<tr>
+		    <td>Id Cuenta</td><td th:text="${cuenta.idCuenta}"></td>
+		</tr>
+		<tr>
+			<td>Saldo (€)</td><td th:text="${cuenta.saldo}"></td>
+        </tr>
+        <tr>
+            <td>Tipo cuenta (€)</td><td th:text="${cuenta.tipoCuenta}"></td>
+        </tr>
+    </table>
+
+	<p>Ingresar dinero</p>
+    <form th:action="@{/cuenta/ingresar}" method="post">
+        <label for="inputid1">Cantidad (€):</label>
+        <!-- any se pone para que admite números decimales -->
+        <input type="number" id="inputid1" name="cantidad" required step="any" min="0.01"><br>
+        <input type="submit" value="Ingresar">
+    </form>
+    <br>
+</body>
+</body>
+</html>

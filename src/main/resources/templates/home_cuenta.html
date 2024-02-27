@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Home de la Cuenta</title>
+    <link rel="stylesheet" type="text/css" href="/css/estilos.css">
+</head>
+<body>
+    <h2>Cajero</h2>
+    <span th:text="${mensaje}"></span>
+    <h3>Panel de control de la cuenta</h3>
+    <p>Información de la cuenta:</p>
+    <table>
+		<tr>
+		    <td>Id Cuenta</td><td th:text="${cuenta.idCuenta}"></td>
+		</tr>
+		<tr>
+			<td>Saldo (€)</td><td th:text="${cuenta.saldo}"></td>
+        </tr>
+        <tr>
+            <td>Tipo cuenta</td><td th:text="${cuenta.tipoCuenta}"></td>
+        </tr>
+    </table>
+
+    <p>Opciones:</p>
+    <div>
+        <a th:href = @{/cuenta/cerrarsesion}>Cerrar sesión</a><br>
+        <a th:href = @{/cuenta/ingresar}>Ingresar</a><br>
+        <a th:href = @{/cuenta/extraer}>Extraer</a><br>
+        <a th:href = @{/cuenta/movimientos}>Ver movimientos</a><br>
+        <a th:href = @{/cuenta/transferir}>Transferir</a><br>
+    </div>
+    <br>
+</body>
+</body>
+</html>

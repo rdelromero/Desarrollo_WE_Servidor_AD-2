@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="/css/estilos.css">
+</head>
+<body>
+    <h2>Cajero modo administrador</h2>
+    Datos del movimiento<br>
+    <br>
+    <table>
+        <tr>
+            <td>Id movimiento</td><td th:text="${movimiento.idMovimiento}"></td>
+        </tr>
+        <tr>
+            <td>Id cuenta</td><td th:text="${movimiento.cuenta}"></td>
+        </tr>
+         <tr>
+            <td>Fecha</td><td th:text="${movimiento.fecha}"></td>
+        </tr>
+        <tr>
+            <td>Cantidad (€)</td><td th:text="${movimiento.cantidad}"></td>
+        </tr>
+        <tr>
+            <td>Operación</td><td th:text="${movimiento.operacion}"></td>
+        </tr>
+    </table>
+</body>
+</html>
+

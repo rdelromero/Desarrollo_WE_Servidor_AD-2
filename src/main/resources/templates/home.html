@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+body {
+    font-family: 'Arial', sans-serif;
+}
+table {
+    border-collapse: collapse;
+    }
+tr {
+    border: 1px solid;
+}   
+</style>
+</head>
+<body>
+    <h2>Cajero</h2>
+    <!--<h3>Lista con todas las cuentas</h3>
+    <table>
+		<tr>
+			<th>Id</th>
+			<th>Saldo</th>
+			<th>Tipo de cuenta</th>
+		</tr>
+		<tr th:each="cuenta: ${listaTodasCuentas}">
+			<td th:text = ${cuenta.idCuenta}></td>
+			<td th:text = ${cuenta.saldo}></td>
+			<td th:text = ${cuenta.tipoCuenta}></td>
+		</tr>
+	</table>  -->
+
+	Introduzca su número de cuenta<br>
+	<br>
+	<!--   <form action="/" method="post">   equivalente localmente -->
+    <form th:action="@{/}" method="post">
+        <label for="inputid1">Id cuenta:</label>
+        <input type="number" id="inputid1" name="idCuenta" required><br>
+        <br>
+        <button type="submit">Ir a la cuenta</button>
+    </form>
+    <br>
+    <span th:text="${mensaje}"></span>
+</body>
+</html>

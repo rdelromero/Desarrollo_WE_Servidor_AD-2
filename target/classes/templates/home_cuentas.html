@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+    <title>Insert title here</title>
+    <link rel="stylesheet" type="text/css" href="/css/estilos.css">
+</head>
+<body>
+    <h2>Cajero modo administrador</h2>
+    <a th:href=@{/cuentas/crearcuenta}>Crear cuenta</a>
+    <h3>Lista con todas las cuentas</h3>
+    <table>
+		<tr>
+			<th>Id</th>
+			<th>Saldo (€)</th>
+			<th>Tipo de cuenta</th>
+			<th>Acción</th>
+		</tr>
+		<tr th:each="cuenta: ${listaTodasCuentas}">
+			<td th:text = ${cuenta.idCuenta}></td>
+			<td th:text = ${cuenta.saldo}></td>
+			<td th:text = ${cuenta.tipoCuenta}></td>
+			<td><a th:href = @{/cuentas/leer/{valorid}(valorid=${cuenta.idCuenta})}>Leer</a>
+			<a th:href = @{/cuentas/actualizar/{valorid}(valorid=${cuenta.idCuenta})}>Editar</a>
+			<a th:href = @{/cuentas/borrar/{valorid}(valorid=${cuenta.idCuenta})}>Borrar</a></td>
+		</tr>
+	</table>
+</body>
+</html>

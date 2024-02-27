@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+    <title>Insert title here</title>
+    <link rel="stylesheet" type="text/css" href="/css/estilos.css">
+</head>
+<body>
+    <h2>Cajero modo administrador</h2>
+    <span th:text="${mensaje}"></span>
+    <h3>Lista con todas los movimientos</h3>
+    <table>
+		<tr>
+			<th>Fecha</th>
+			<th>Cantidad (€)</th>
+			<th>Operación</th>
+			<th>Acción</th>
+		</tr>
+		<tr th:each="movimiento: ${listaTodosMovimientos}">
+			<td th:text = "${#dates.format(movimiento.fecha, 'dd-MM-yyyy HH:mm:ss')}"></td>
+			<td th:text = ${movimiento.cantidad}></td>
+			<td th:text = ${movimiento.operacion}></td>
+			<td><a th:href = @{/movimientos/leer/{valorid}(valorid=${movimiento.idMovimiento})}>Leer</a></td>
+		</tr>
+	</table>
+</body>
+</html>
